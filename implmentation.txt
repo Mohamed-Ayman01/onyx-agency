@@ -1,0 +1,112 @@
+# Onyx — Web Development Agency Landing Page
+
+Build a premium dark-themed landing page for **Onyx**, a web development agency, using the analyzed design style: dark glassmorphism, purple accent glows, constellation network motifs, and dual serif/sans typography.
+
+## Design System
+
+| Token | Value |
+|---|---|
+| Background | `#06060B` deep black |
+| Surface | `rgba(255,255,255,0.04)` glass panels |
+| Primary Accent | `#8B5CF6` → `#A78BFA` violet gradient |
+| Secondary Glow | `#7C3AED` → `#DB2777` radial at 10-15% opacity |
+| Text Primary | `#FFFFFF` |
+| Text Muted | `#9CA3AF` |
+| Borders | `rgba(255,255,255,0.08)` |
+| Glass Buttons | `rgba(255,255,255,0.08)` + `backdrop-blur(16px)` |
+| Headline Font | **Outfit** (bold geometric sans) |
+| Accent Font | **Playfair Display** (italic serif for emphasis words) |
+| Body Font | **Inter** (clean sans-serif) |
+
+## Page Sections
+
+### 1. Navigation
+- Onyx logo (stylized text or icon)
+- Links: Home · Services · Work · Process · Contact
+- Frosted glass pill CTA: "Start a Project →"
+
+### 2. Hero
+- Tagline pill badge: "We Build Digital Experiences →"
+- **Headline**: "We Craft **_Exceptional_** Digital Products" (italic serif on emphasis)
+- Subtitle: "Onyx is a web development agency that transforms ideas into stunning, high-performance digital experiences."
+- Two glassmorphic CTAs: "Our Work ↗" and "Get in Touch"
+- Animated constellation network lines + floating tech-label nodes (e.g. "React", "Next.js", "Node.js" with version numbers)
+- Radial purple glow behind headline
+
+### 3. Trusted By (Logo Strip)
+- Grayscale client/partner logos scrolling horizontally
+- Subtle separator lines above/below
+
+### 4. Services
+- Section title: "What We **_Deliver_**"
+- 3-4 glassmorphic cards with icon, title, and description:
+  - **Web Development** — Custom websites & web apps
+  - **UI/UX Design** — User-centered design systems
+  - **E-Commerce** — Scalable online stores
+  - **Mobile Apps** — Cross-platform mobile solutions
+- Cards have subtle purple border glow on hover
+
+### 5. Featured Work / Portfolio
+- Section title: "Selected **_Projects_**"
+- 2-3 project cards with:
+  - Large image placeholder area (gradient placeholder)
+  - Project name, category tag, brief description
+  - "View Case Study →" link
+- Staggered grid layout
+
+### 6. Process / How We Work
+- Section title: "Our **_Process_**"
+- 4 numbered steps in a horizontal timeline:
+  1. Discovery → 2. Design → 3. Develop → 4. Launch
+- Each step has an icon, title, and one-line description
+- Connected by a thin line with dot nodes (matching constellation motif)
+
+### 7. Stats / Social Proof
+- Large numbers with labels in a row:
+  - "150+" Projects Delivered
+  - "98%" Client Satisfaction
+  - "5+" Years Experience
+  - "40+" Team Members
+- Numbers animate in on scroll
+
+### 8. CTA Section
+- Dark glassmorphic panel with radial purple glow
+- "Ready to Build Something **_Amazing_**?"
+- "Let's discuss your next project."
+- Large CTA button: "Start Your Project →"
+
+### 9. Footer
+- Onyx logo + tagline
+- Quick links columns: Services, Company, Legal
+- Social media icons
+- © 2026 Onyx. All rights reserved.
+
+## Proposed Changes
+
+### Single-Page App (HTML + CSS + JS)
+
+#### [NEW] [index.html](file:///C:/Users/dell/.gemini/antigravity/scratch/onyx/index.html)
+- Full semantic HTML structure with all 9 sections
+- Google Fonts imports (Outfit, Playfair Display, Inter)
+- Meta tags for SEO
+
+#### [NEW] [style.css](file:///C:/Users/dell/.gemini/antigravity/scratch/onyx/style.css)
+- CSS custom properties design system
+- Glassmorphic component styles
+- Constellation background animation
+- Responsive breakpoints (mobile, tablet, desktop)
+- Hover effects and micro-animations
+
+#### [NEW] [script.js](file:///C:/Users/dell/.gemini/antigravity/scratch/onyx/script.js)
+- Constellation canvas animation (network lines + floating nodes)
+- Scroll-triggered number counter animation
+- Smooth scroll navigation
+- Mobile hamburger menu toggle
+- Intersection Observer for fade-in animations
+
+## Verification Plan
+
+### Manual Verification
+- Open `index.html` in browser and verify all sections render correctly
+- Test responsive behavior at mobile/tablet/desktop widths
+- Verify animations and hover effects work smoothly
