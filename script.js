@@ -152,20 +152,42 @@
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('open');
-        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
-    });
-
-    // Close menu on link click
-    navLinks.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('open');
-            document.body.style.overflow = '';
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            const isOpen = navLinks.classList.contains('open');
+            if (isOpen) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            } else {
+                hamburger.classList.add('active');
+                navLinks.classList.add('open');
+                hamburger.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
         });
-    });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu automatically if window resizes above mobile breakpoint (992px)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && navLinks.classList.contains('open')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        }, { passive: true });
+    }
 
     // ===========================
     // SMOOTH SCROLL
@@ -317,6 +339,13 @@
             });
         }
     });
+
+    // Recalculate open FAQ heights on resize so content never overflows or truncates
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.faq-item.active .faq-answer').forEach(answer => {
+            if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        });
+    }, { passive: true });
 
     // ===================================
     // EmailJS Contact Form Handler
